@@ -27,10 +27,11 @@ const styles = StyleSheet.create({
     width: "45%",
     height: "25%",
     backgroundColor: "rgb(184, 172, 239)",
-    alignContent: "center",
+    justifyContent: "start",
     alignItems: "center",
     borderRadius: 10,
     padding: 10,
+    gap: 0,
   },
   img: {
     width: 30,
@@ -41,5 +42,6 @@ const styles = StyleSheet.create({
     color: "#3e3b4d",
     fontSize: 12,
     fontWeight: "600",
+    textAlign: "center",
   },
 });

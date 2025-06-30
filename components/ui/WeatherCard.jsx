@@ -15,7 +15,7 @@ import { StatusPill } from "./StatusPill";
 const { width, height } = Dimensions.get("window");
 
 export function WeatherCard(props) {
-  const weatherInfo = WeatherCode[props.weather.current_weather.weathercode];
+  const weatherInfo = WeatherCode[props.weather?.current_weather.weathercode];
   const [state, setState] = useState("");
   const [city, setCity] = useState("");
   const keys = [

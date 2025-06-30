@@ -26,7 +26,7 @@ export default function BlankScreen() {
   const fetchWeather = async (location) => {
     if (!location) return;
     const response = await fetch(
-      `https://api.open-meteo.com/v1/forecast?latitude=${location.coords.latitude}&longitude=${location.coords.longitude}&current_weather=true&hourly=uv_index,relative_humidity_2m`
+      `https://api.open-meteo.com/v1/forecast?latitude=${location.coords.latitude}&longitude=${location.coords.longitude}&current_weather=true&hourly=uv_index,relative_humidity_2m&daily=uv_index_max,weathercode,temperature_2m_max`
     );
     const data = await response.json();
     setWeather(data);

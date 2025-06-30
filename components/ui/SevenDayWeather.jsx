@@ -19,7 +19,6 @@ export function SevenDayWeather({ weather, currentTime }) {
         marginTop: 20,
         borderRadius: 20,
       }}
-      
       contentContainerStyle={{
         alignItems: "center",
         gap: width * 0.05,
@@ -27,30 +26,15 @@ export function SevenDayWeather({ weather, currentTime }) {
         overflow: "hidden",
       }}
     >
-      <SevenDayWeatherElement
-        height={containerSize.height}
-        width={containerSize.width}
-      />
-      <SevenDayWeatherElement
-        height={containerSize.height}
-        width={containerSize.width}
-      />
-      <SevenDayWeatherElement
-        height={containerSize.height}
-        width={containerSize.width}
-      />
-      <SevenDayWeatherElement
-        height={containerSize.height}
-        width={containerSize.width}
-      />
-      <SevenDayWeatherElement
-        height={containerSize.height}
-        width={containerSize.width}
-      />
-      <SevenDayWeatherElement
-        height={containerSize.height}
-        width={containerSize.width}
-      />
+      {weather?.daily?.time.slice(0, 7).map((day, index) => (
+        <SevenDayWeatherElement
+          key={index}
+          weather={weather}
+          currentTime={day}
+          height={containerSize.height}
+          width={containerSize.width}
+        />
+      ))}
     </ScrollView>
   );
 }
